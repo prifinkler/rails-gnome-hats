@@ -41,7 +41,7 @@ class HatsController < ApplicationController
   end
 
   def hat_params
-    params.require(:hat).permit(:type, :colour, :size, :price)
+    params.require(:hat).permit(:style, :color, :price)
   end
 
 end
