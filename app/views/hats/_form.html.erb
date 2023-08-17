@@ -1,8 +1,8 @@
 
 <%# start and end date %>
-<%= simple_form_for(hat) do |f| %>
+<%= simple_form_for @hat do |f| %>
   <%= f.input :style, placeholder: 'Pointy' %>
-  <%= f.input :colour, placeholder: 'Red' %>
-  <%= f.input :price, placeholder: '100 CHF' %>
+  <%= f.input :color, placeholder: 'Red' %>
+  <%= f.input :price, placeholder: '100' %>
   <%= f.submit "Submit Hat", class: "btn btn-primary"%>
 <% end %>
