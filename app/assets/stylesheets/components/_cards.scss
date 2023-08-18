@@ -1,13 +1,14 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 12px;
+  grid-gap: 16px;
 }
 
 .card-product {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
 }
 
 .card-product > img {
@@ -29,7 +30,7 @@
 }
 
 .card-product .card-product-info {
-  padding: 16px;
+  padding: 12px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
