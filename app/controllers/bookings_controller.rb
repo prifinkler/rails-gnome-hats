@@ -1,7 +1,7 @@
 
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update]
-
+  before_action :set_hat, only: [:new, :create]
   def new
     @booking = Booking.new
   end
@@ -12,11 +12,18 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.hat = @hat
+    @booking.user = current_user
     if @booking.save
-      redirect_to @booking, notice: 'Booking was successfully created.'
+      redirect_to booking_path(@booking), notice: 'Booking was successfully created.'
     else
       render :new
     end
+  end
+
+  def index
+    @user = current_user
+    @bookings = @user.bookings
   end
 
   def edit
@@ -42,5 +49,12 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:hat_id, :user_id, :start_date, :end_date)
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+  def set_hat
+    @hat = Hat.find(params[:hat_id])
   end
 end
