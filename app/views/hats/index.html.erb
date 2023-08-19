@@ -1,15 +1,32 @@
-<div class="container mt-5">
-  <h1>Gnome Hats</h1>
 
-<div class="row">
-    <% @hats.each do |hat| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= asset_path('F638AEF7-97E0-41D0-B33D-BD6E45EEA375_1_201_a.jpeg') %>');">
+  <div class="container">
+    <h1>Gnome Hats</h1>
+    <p>The gnome reveals his <strong>individuality</strong> as much with his hat as with the shape of his nose.</p>
+  </div>
+</div>
+
+
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <%= link_to "Add new hat", new_hat_path, class: "btn btn-flat" %>
+  </div>
+
+  <div class="cards">
+      <% @hats.each do |hat| %>
         <%= link_to hat_path(hat), class:"text-decoration-none" do %>
-          <%# <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path('/app/assets/images/22936D8A-11AA-4F97-A6B3-724007C1B933_1_201_a.jpeg') %>
-            <%= hat.style %>
-          <%# </div> %>
+          <div class="card-product">
+          <%# this image below is hard-coded for now just for testing %>
+            <img src= <%= asset_path('22936D8A-11AA-4F97-A6B3-724007C1B933_1_201_a.jpeg') %> >
+            <div class="card-product-info">
+              <div>
+                <p><%= hat.style %></p>
+              </div>
+                <p class="card-product-pricing"><%= "£#{hat.price}" %></p>
+            </div>
+          </div>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
