@@ -37,6 +37,14 @@
   position: relative;
 }
 
+.card-hat .card-hat-infos {
+  padding: 16px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
