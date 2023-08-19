@@ -3,12 +3,12 @@
     <img src= <%= asset_path(@hat.image_url) %> >
     <div class=".card-hat .card-hat-infos">
       <div>
-        <h1><%= @hat.style %></h1>
+        <h2><%= @hat.style %></h2>
         <p>Colour: <%= @hat.color %></p>
         <p>Description: <%= @hat.description %></p>
       </div>
       <div>
-        <h1 class=".card-hat .card-hat-infos">Price: <%= "£#{@hat.price}" %></h1>
+        <h2 class=".card-hat .card-hat-infos">Price: <%= "£#{@hat.price}" %></h2>
       </div>
       <div>
         <a href="<%= new_hat_booking_path(@hat) %>" class="btn btn-dark">Rent this hat</a>
