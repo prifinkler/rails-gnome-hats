@@ -1,14 +1,20 @@
-<h1>When do you want to rent this hat?</h1>
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="rounded p-3 shadow">
-        <%= simple_form_for [@hat, @booking] do |f| %>
-        <%= f.input :start_date%>
-        <%= f.input :end_date %>
-        <%= f.submit "Rent Hat", class: "btn btn-primary"%>
-      <% end %>
+<span class="border border-primary">
+<div class ="container">
+  <div class="card-product">
+    <h1>When do you want to rent this hat?</h1>
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md-6 offset-lg-3">
+          <div class="rounded p-3 shadow">
+            <%= simple_form_for [@hat, @booking] do |f| %>
+            <%= f.input :start_date%>
+            <%= f.input :end_date %>
+            <%= f.submit "Rent Hat", class: "btn btn-dark"%>
+          <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+</span>
