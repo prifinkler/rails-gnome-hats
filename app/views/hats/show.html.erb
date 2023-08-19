@@ -1,5 +1,19 @@
-<h1><%= @hat.style %></h1>
-<p>Color: <%= @hat.color %></p>
-<p>Price: <%= number_to_currency(@hat.price) %></p>
+<div class ="container">
+  <div class="card-product">
+    <img src= <%= asset_path(@hat.image_url) %> >
+    <div class=".card-hat .card-hat-infos">
+      <div>
+        <h1><%= @hat.style %></h1>
+        <p>Colour: <%= @hat.color %></p>
+        <p>Description: <%= @hat.description %></p>
+      </div>
+      <div>
+        <h1 class=".card-hat .card-hat-infos">Price: <%= "£#{@hat.price}" %></h1>
+      </div>
+      <div>
+        <a href="<%= new_hat_booking_path(@hat) %>" class="btn btn-dark">Rent this hat</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-<a href="<%= new_hat_booking_path(@hat) %>" class="btn btn-primary">Rent this hat</a>
