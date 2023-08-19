@@ -2,4 +2,4 @@
 <p>Color: <%= @hat.color %></p>
 <p>Price: <%= number_to_currency(@hat.price) %></p>
 
-<a href="<%= hats_path %>" class="btn btn-primary">Rent this hat</a>
+<a href="<%= new_hat_booking_path(@hat) %>" class="btn btn-primary">Rent this hat</a>
