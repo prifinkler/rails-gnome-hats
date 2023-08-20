@@ -1,19 +1,23 @@
-<div class ="container">
-  <div class="card-product">
-    <img src= <%= asset_path(@hat.image_url) %> >
-    <div class=".card-hat .card-hat-infos">
+<div class="container py-4">
+  <div class="row">
+    <div class="col-md d-flex justify-content-center align-items-center">
+      <div class="text-center py-4">
+        <img class="img-fluid w-70" src="<%= asset_path(@hat.image_url) %>">
+      </div>
+    </div>
+    <div class="col-md rounded py-4">
       <div>
-        <h2><%= @hat.style %></h2>
-        <p>Colour: <%= @hat.color %></p>
-        <p>Description: <%= @hat.description %></p>
+        <h3><%= @hat.style %></h3>
+        <p><strong>Colour:</strong> <%= @hat.color %></p>
+        <p><strong>Description:</strong> <%= @hat.description %></p>
       </div>
       <div>
-        <h2 class=".card-hat .card-hat-infos">Price: <%= "£#{@hat.price}" %></h2>
+        <h3>Price: <%= "£#{@hat.price}" %></h3>
       </div>
-      <div>
-        <a href="<%= new_hat_booking_path(@hat) %>" class="btn btn-dark">Rent this hat</a>
+      <a href="<%= new_hat_booking_path(@hat) %>" class="btn btn-primary">Rent this hat</a>
+      <div class="mt-4">
+        <a href="<%= hats_path %>">Return to all listings</a>
       </div>
     </div>
   </div>
 </div>
-
