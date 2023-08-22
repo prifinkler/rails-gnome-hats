@@ -1,11 +1,14 @@
-<h1>Booking Confirmation</h1>
+<div class="container py-5">
+  <h1>Booking Confirmation</h1>
 
-<p>Your booking has been confirmed with the following details:</p>
+  <p>Your booking has been confirmed with the following details:</p>
 
-<p>Start Date: <%= @booking.start_date %></p>
-<p>End Date: <%= @booking.end_date %></p>
+  <p>Start Date: <%= @booking.start_date %></p>
+  <p>End Date: <%= @booking.end_date %></p>
 
-<p>Thank you for renting a hat!</p>
+  <p>Thank you for renting a hat!</p>
 
-<a href="<%= bookings_path %>" class="btn btn-primary">See all of your bookings here</a>
+  <a href="<%= bookings_path %>" class="btn btn-primary">See all of your bookings here</a>
+  <a href="<%= edit_hat_booking_path(@booking.hat, @booking) %>" class="btn btn-primary">Edit booking</a>
 
+</div>

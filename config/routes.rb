@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  root to: "hats#index"
+  root to: "pages#home"
 
   devise_for :users
 
   resources :hats, except: %i[destroy] do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[new create edit update]
   end
   resources :bookings, only: %i[index show]
 

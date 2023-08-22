@@ -1,17 +1,12 @@
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= asset_path('F638AEF7-97E0-41D0-B33D-BD6E45EEA375_1_201_a.jpeg') %>');">
-  <div class="container">
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= asset_path('banner.jpeg')');"> %>
+  <%# <div class="container">
     <h1>Gnome Hats</h1>
     <p>The gnome reveals his <strong>individuality</strong> as much with his hat as with the shape of his nose.</p>
-  </div>
-</div>
+  </div> %>
+<%# </div> %>
 
 
 <div class="container py-5">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <%= link_to "Add new hat", new_hat_path, class: "btn btn-flat" %>
-  </div>
-
   <div class="cards">
       <% @hats.each do |hat| %>
         <%= link_to hat_path(hat), class:"text-decoration-none" do %>
@@ -28,4 +23,3 @@
       <% end %>
     </div>
   </div>
-</div>

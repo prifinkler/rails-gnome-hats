@@ -1,2 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="homebg">
+  <div class="container py-5">
+    <h1>Gnome Hats</h1>
+    <p>The gnome reveals his <strong>individuality</strong> as much with his hat as with the shape of his nose.</p>
+    <div class="position-fixed bottom-0">
+        <%= link_to "Get your gnome on", "hats", class: "btn btn-flat homebtn"%>
+        <%= link_to "Sprout a New Hat Listing", "hats/new", class: "btn btn-flat homebtn" %>
+    </div>
+  </div>
+</div>
