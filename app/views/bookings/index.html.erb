@@ -1,10 +1,12 @@
-<h1>Booking History</h1>
+<div class="container py-5">
+  <h1>Booking History</h1>
 
-<% @bookings.each do |booking| %>
-  <div>
-    <h3>Booking ID: <%= booking.id %></h3>
-    <p>Hat: <%= booking.hat.style %></p>
-    <p>Rental Start Date: <%= booking.start_date %></p>
-    <p>Rental End Date: <%= booking.end_date %></p>
-  </div>
-<% end %>
+  <% @bookings.each do |booking| %>
+    <div>
+      <h3>Booking ID: <%= booking.id %></h3>
+      <p>Hat: <%= booking.hat.style %></p>
+      <p>Rental Start Date: <%= booking.start_date %></p>
+      <p>Rental End Date: <%= booking.end_date %></p>
+    </div>
+  <% end %>
+</div>

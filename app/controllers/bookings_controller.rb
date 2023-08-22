@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-      redirect_to @booking, notice: 'Booking was successfully updated.'
+      redirect_to booking_path(@booking), notice: 'Booking was successfully updated.'
     else
       render :edit
     end
