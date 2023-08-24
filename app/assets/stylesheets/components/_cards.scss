@@ -3,7 +3,13 @@
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   grid-gap: 16px;
 }
-
+.card-product h1 {
+  margin: 0;
+  color: #03588C;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
 .card-product {
   overflow: hidden;
   background: white;
