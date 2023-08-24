@@ -7,14 +7,14 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning up database..."
-Booking.destroy_all
-User.destroy_all
+# Booking.destroy_all
+# User.destroy_all
 Hat.destroy_all
 puts "Database cleaned"
 
 
-User.create!(email: "gnome@gmail.com", password: ENV['PASSWORD'], first_name: "Pri", last_name: "Finkler")
-puts "Users created"
+# User.create!(email: "gnome@gmail.com", password: ENV['PASSWORD'], first_name: "Pri", last_name: "Finkler")
+# puts "Users created"
 
 Hat.create(
   style: 'Beanie',

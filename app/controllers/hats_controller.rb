@@ -1,6 +1,6 @@
 class HatsController < ApplicationController
   # index, show, create, new, edit, update
-  before_action :set_hat, only: %i[show edit]
+  before_action :set_hat, only: %i[show edit update destroy]
 
   def index
     @hats = Hat.all
@@ -32,6 +32,11 @@ class HatsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @hat.destroy
+    redirect_to hats_path, status: :see_other
   end
 
   private
