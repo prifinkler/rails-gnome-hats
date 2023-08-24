@@ -29,7 +29,7 @@ class HatsController < ApplicationController
   def update
     @hat= Hat.find(params[:id])
     if @hat.update(hat_params)
-      redirect_to hat_path(@hat)
+      redirect_to hat_path(@hat), notice: 'Hat has been updated!'
     else
       render :edit
     end
