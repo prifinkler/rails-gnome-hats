@@ -3,7 +3,12 @@ class HatsController < ApplicationController
   before_action :set_hat, only: %i[show edit update destroy]
 
   def index
-    @hats = Hat.all
+    if params[:user_id]
+      @user = User.find(params[:user_id])
+      @hats = @user.hats
+    else
+      @hats = Hat.all
+    end
   end
 
   def show

@@ -9,7 +9,7 @@
 puts "Cleaning up database..."
 # Booking.destroy_all
 # User.destroy_all
-Hat.destroy_all
+# Hat.destroy_all
 puts "Database cleaned"
 
 
