@@ -2,11 +2,31 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #03588C;
+  background: $red;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #023758;
+  background: #860e0e;
   color: white;
+}
+
+// Gnome button with hover effect for confirm booking buttton:
+.gnome-btn {
+  position:relative;
+}
+
+.gnome-img {
+  // background-image: url("gnome-button.png");
+  position: absolute;
+  height: 0;
+  bottom: 0;
+  right: 0;
+  transition: right 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.gnome-btn:hover .gnome-img {
+  right: -27px;
+  height: 70px;
 }

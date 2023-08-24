@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :hats, except: %i[destroy] do
-    resources :bookings, only: %i[new create edit update]
+  resources :hats do
+    resources :bookings, only: %i[new create edit update destroy]
   end
   resources :bookings, only: %i[index show]
 
@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   # get 'my_bookings', to: 'users#bookings'
 
   # Defines the root path route ("/")
-  # root "articles#index"
+#   # root "articles#index"
+
+# resources :hats
+# resources :bookings
 end
