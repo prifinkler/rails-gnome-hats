@@ -1,7 +1,9 @@
 <div class="container py-4">
   <div class="row">
     <div class="col-md">
-      <img class="img-fluid w-70" src="<%= asset_path(@hat.image_url) %>">
+      <% if @hat.photo.attached? %>
+      <%= cl_image_tag @hat.photo.key, class:"img-fluid w-70" %>
+      <% end %>
     </div>
     <div class="col-md">
       <div>

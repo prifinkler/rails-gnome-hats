@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   # get 'my_bookings', to: 'users#bookings'
 
   # Defines the root path route ("/")
-  # root "articles#index"
+#   # root "articles#index"
+
+# resources :hats
+# resources :bookings
 end

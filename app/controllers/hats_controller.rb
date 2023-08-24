@@ -27,8 +27,9 @@ class HatsController < ApplicationController
   end
 
   def update
+    @hat= Hat.find(params[:id])
     if @hat.update(hat_params)
-      redirect_to @hat, notice: 'Hat has been updated!'
+      redirect_to hat_path(@hat), notice: 'Hat has been updated!'
     else
       render :edit
     end
@@ -46,7 +47,7 @@ class HatsController < ApplicationController
   end
 
   def hat_params
-    params.require(:hat).permit(:style, :color, :price, :image_url, :description)
+    params.require(:hat).permit(:style, :color, :price, :description, :photo)
   end
 
 end

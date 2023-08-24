@@ -2,7 +2,7 @@
   <div class="row h-70">
     <div class="col-md">
       <div class="text-center">
-        <img class="img-fluid" src="<%= asset_path(@hat.image_url) %>">
+        <%= cl_image_tag @hat.photo.key, class: "img-fluid" %>
       </div>
     </div>
     <div class="col-md">
