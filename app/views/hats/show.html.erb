@@ -2,17 +2,27 @@
   <div class="row">
     <div class="col-md d-flex justify-content-center align-items-center">
       <div class="text-center py-4">
-        <img class="img-fluid w-70" src="<%= asset_path(@hat.image_url) %>">
+
       </div>
     </div>
     <div class="col-md rounded py-4">
       <div>
         <h3><%= @hat.style %></h3>
         <p><strong>Colour:</strong> <%= @hat.color %></p>
+          <% if @hat.photo.attached? %>
+          <%= cl_image_tag @hat.photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+        <br>
         <p><strong>Description:</strong> <%= @hat.description %></p>
       </div>
       <div>
         <h3>Price: <%= "£#{@hat.price}" %></h3>
+      </div>
+      <div> <%= link_to "Delete Hat",
+            hat_path(@hat),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </label>
+        </div>
       </div>
       <a href="<%= new_hat_booking_path(@hat) %>" class="btn btn-primary">Rent this hat</a>
       <div class="mt-4">
@@ -20,4 +30,6 @@
       </div>
     </div>
   </div>
+</div>
+    </div>
 </div>

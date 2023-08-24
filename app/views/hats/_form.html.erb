@@ -3,5 +3,7 @@
   <%= f.input :color, placeholder: 'Red' %>
   <%= f.input :price, placeholder: '100' %>
   <%= f.input :description %>
+  <%= f.input :photo, as: :file%>
   <%= f.submit "Submit Hat", class: "btn btn-primary"%>
+  <%= link_to 'Back to Hats', hats_path, class: 'btn btn-secondary' %>
 <% end %>

@@ -1,6 +1,6 @@
 class HatsController < ApplicationController
   # index, show, create, new, edit, update
-  before_action :set_hat, only: %i[show edit]
+  before_action :set_hat, only: %i[show edit update edit]
 
   def index
     @hats = Hat.all
@@ -27,12 +27,20 @@ class HatsController < ApplicationController
   end
 
   def update
+    @hat= Hat.find(params[:id])
     if @hat.update(hat_params)
-      redirect_to @hat, notice: 'Hat has been updated!'
+      redirect_to hat_path(@hat)
     else
       render :edit
     end
   end
+
+  def destroy
+    @hat = Hat.find(params[:id])
+    @hat.destroy
+    redirect_to hats_path, status: :see_other
+  end
+
 
   private
 
@@ -41,7 +49,7 @@ class HatsController < ApplicationController
   end
 
   def hat_params
-    params.require(:hat).permit(:style, :color, :price, :image_url, :description)
+    params.require(:hat).permit(:style, :color, :price, :description, :photo)
   end
 
 end
