@@ -11,7 +11,7 @@
     <% @hats.each do |hat| %>
       <%= link_to hat_path(hat), class: "text-decoration-none" do %>
         <div class="card-product">
-          <%= cl_image_tag hat.photo.key, class: "img-fluid"%>
+          <%= cl_image_tag("https://unsplash.com/photos/i-EUzn4MLK0", class: "img-fluid") %>
           <div class="card-product-info">
             <div>
               <p><%= hat.style %></p>
