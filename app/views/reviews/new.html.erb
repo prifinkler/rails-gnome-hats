@@ -1,0 +1,14 @@
+<div class="container py-4">
+  <div class="row custom-height">
+    <div class="col-md custom-col">
+      <img class="img-fluid custom-col" src="<%= asset_path('main-gnome.png') %>">
+    </div>
+    <div class="col-md">
+      <div class="rounded p-3 shadow">
+          <h3>Add a review</h3>
+            <%= render "form" %>
+            <a href="<%= bookings_path %>" class="btn btn-danger">See all of your bookings here</a>
+        </div>
+    </div>
+  </div>
+</div>

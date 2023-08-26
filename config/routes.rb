@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   resources :hats do
     resources :bookings, only: %i[new create edit update destroy]
   end
-  resources :bookings, only: %i[index show]
-
+  resources :bookings, only: %i[index show] do
+    resources :reviews, only: [:new, :create]
+  end
   # Potential custom routes:
   # get 'my_listings', to: 'users#listings'
   # get 'my_bookings', to: 'users#bookings'

@@ -7,6 +7,16 @@
       <p>Hat: <%= booking.hat.style %></p>
       <p>Rental Start Date: <%= booking.start_date %></p>
       <p>Rental End Date: <%= booking.end_date %></p>
+        <%= link_to 'Add a review', new_booking_review_path(booking), remote: true, class: 'show-review-form-button' %>
+      <h2>Reviews:</h2>
+      <% if booking.hat.reviews.any? %>
+        <% booking.hat.reviews.each do |review| %>
+          <div>
+            <p>Rating: <%= review.rating %></p>
+            <p>Comment: <%= review.comment %></p>
+          </div>
+        <% end %>
+    <% end %>
     </div>
   <% end %>
 </div>
