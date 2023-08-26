@@ -1,23 +1,25 @@
-<div class="row">
-    <div class="col-md-8">
-      <div class="d-flex p-3">
-        <h1>Booking History</h1>
-      </div>
-      <% @bookings.each do |booking| %>
-        <div class="card-bookings p-2 d-flex mb-3">
-          <div class="card-bookings-infos rounded py-2">
-            <h4>Hat: <%= booking.hat.style %></h4>
-            <p>Booking ID: <%= booking.id %></p>
-            <p>Rental Start Date: <%= booking.start_date %></p>
-            <p>Rental End Date: <%= booking.end_date %></p>
-            <%= link_to 'Add a review', new_booking_review_path(booking), remote: true, class: 'show-review-form-button' %>
-          </div>
+<div class="container py-5">
+  <div class="row">
+      <div class="col-md-8">
+        <div class="d-flex p-3">
+          <h3>Booking History</h3>
         </div>
-      <% end %>
-    </div>
-    <div class="col-md-4">
-      <div class="position-fixed d-flex bottom-0">
-        <img class="img-fluid" src="<%= asset_path('climbing-gnome.png') %>" style="max-width: 100%; max-height: auto;">
+        <% @bookings.each do |booking| %>
+          <div class="card-bookings p-4 d-flex justify-content-between mb-3">
+            <div class="card-bookings-infos rounded py-2">
+              <h4><%= booking.hat.style %></h4>
+              <p>Booking ID: <%= booking.id %></p>
+              <p>Rental Start Date: <%= booking.start_date %></p>
+              <p>Rental End Date: <%= booking.end_date %></p>
+            </div>
+            <%= link_to 'Add a review', new_booking_review_path(booking), remote: true, class: "btn btn-danger" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <div class="position-fixed d-flex bottom-0">
+          <img class="img-fluid" src="<%= asset_path('climbing-gnome.png') %>" style="max-width: 100%; max-height: auto;">
+        </div>
       </div>
     </div>
   </div>
