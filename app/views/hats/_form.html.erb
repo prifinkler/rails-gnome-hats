@@ -10,8 +10,9 @@
   </div>
   <%= f.input :description %>
   <%= f.input :photo, as: :file%>
-  <div class="d-flex justify-content-between">
+ <div class="d-flex justify-content-between">
     <%= f.submit "Submit Hat", class: "btn btn-danger"%>
     <%= link_to 'Return to all listings', hats_path %>
   </div>
+
 <% end %>

@@ -1,5 +1,7 @@
 class Hat < ApplicationRecord
   belongs_to :user
+  has_many :bookings
+  has_many :reviews
   has_one_attached :photo
 
   validates :color, :style, :description, presence: true

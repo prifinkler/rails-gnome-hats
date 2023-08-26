@@ -23,7 +23,17 @@
       </div>
       <% end %>
       <div class="mt-4">
-        <%= link_to "Return to all listings", hats_path %>
+      <h2>Reviews:</h2>
+  <% if @hat.reviews.any? %>
+    <% @hat.reviews.each do |review| %>
+        <p>Comment: <%= review.comment %></p>
+        <p>Rating: <%= review.rating %></p>
+      </div>
+    <% end %>
+  <% else %>
+    <p>No reviews yet.</p>
+  <% end %>
+</div>
       </div>
     </div>
   </div>
