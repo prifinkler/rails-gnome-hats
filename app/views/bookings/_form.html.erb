@@ -1,13 +1,8 @@
 <%= simple_form_for [@hat, @booking] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
-  <%= f.submit "Confirm booking", class: "btn btn-danger" %>
+  <div class="btn btn-danger p-0 gnome-btn mt-4">
+    <%= f.submit "Confirm booking", class: "btn btn-danger"  %>
+    <img class="gnome-img" src="<%= asset_path('gnome-button.png') %>" alt="Gnome" />
+  </div>
 <% end %>
-
-<%# test button below with hover effect %>
-    <div>
-      <button class="btn btn-danger gnome-btn mt-5">
-        Hover test
-        <img class="gnome-img" src="<%= asset_path('gnome-button.png') %>" alt="Gnome" />
-      </button>
-    </div>

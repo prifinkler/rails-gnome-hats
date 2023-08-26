@@ -6,3 +6,10 @@
   height:100%;
   text-align: center;
 }
+
+// Small and medium devices (phones and tablets, max width 992px)
+@media (max-width: 992px){
+  .custom-height  {
+    height: 380px;
+  }
+}
