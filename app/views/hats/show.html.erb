@@ -23,16 +23,6 @@
       </div>
       <% end %>
       <div class="mt-4">
-      <h2>Reviews:</h2>
-  <% if @hat.reviews.any? %>
-    <% @hat.reviews.each do |review| %>
-        <p>Comment: <%= review.comment %></p>
-        <p>Rating: <%= review.rating %></p>
-      </div>
-    <% end %>
-  <% else %>
-    <p>No reviews yet.</p>
-  <% end %>
 </div>
       </div>
     </div>
@@ -41,24 +31,26 @@
 <%# Link the new reviews to the below once finished %>
   <div id="reviewCarousel" class="carousel slide text-center carousel-dark py-5" data-mdb-ride="carousel">
     <div class="carousel-inner">
-      <% reviews = [
-    {
-      quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti nesciunt sint eligendi reprehenderit reiciendis, quibusdam illo, beatae quia fugit consequatur laudantium velit magnam error. Consectetur distinctio fugit doloremque."
-    },
-    {
-      quote: "Minus et deleniti nesciunt sint eligendi reprehenderit reiciendis."
-    },
-    {
-      quote: "Reprehenderit reiciendis, quibusdam illo, beatae quia fugit consequatur laudantium velit magnam error. Consectetur distinctio fugit doloremque."
-    }
-  ] %>
-      <% reviews.each_with_index do |testimonial, index| %>
+      <% reviews = [@hat.reviews]
+  #   {
+  #     quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti nesciunt sint eligendi reprehenderit reiciendis, quibusdam illo, beatae quia fugit consequatur laudantium velit magnam error. Consectetur distinctio fugit doloremque."
+  #   },
+  #   {
+  #     quote: "Minus et deleniti nesciunt sint eligendi reprehenderit reiciendis."
+  #   },
+  #   {
+  #     quote: "Reprehenderit reiciendis, quibusdam illo, beatae quia fugit consequatur laudantium velit magnam error. Consectetur distinctio fugit doloremque."
+  #   }
+  # ] %>
+  <h2>Reviews:</h2>
+  <% if @hat.reviews.any? %>
+      <% @hat.reviews.each_with_index do |testimonial, index| %>
         <div class="carousel-item <%= index == 0 ? 'active' : '' %>" >
           <div class="row d-flex justify-content-center">
             <div class="col-8">
               <p class="text-muted">
                 <i class="fas fa-quote-left pe-2"></i>
-                <%= testimonial[:quote] %>
+                <%= testimonial[:comment] %>
               </p>
             </div>
           </div>
@@ -78,5 +70,8 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
+    <% else %>
+    <p>No reviews yet.</p>
+  <% end %>
   </div>
 </div>
