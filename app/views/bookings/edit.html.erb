@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md d-flex justify-content-center align-items-center">
       <div class="text-center py-4">
-        <img class="img-fluid w-70" src="<%= asset_path(@booking.hat.image_url) %>">
+        <%= cl_image_tag @hat.photo.key, class: "img-fluid"%>
       </div>
     </div>
     <div class="col-md rounded py-4">
