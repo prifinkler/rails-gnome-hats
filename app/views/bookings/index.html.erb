@@ -7,7 +7,7 @@
         <% @bookings.each do |booking| %>
         <div class="card-booking">
           <%= cl_image_tag booking.hat.photo.key, class: "img-fluid"%>
-          <div class="card-booking-infos flex-grow-1 p-15">
+          <div class="card-booking-infos flex-grow-1">
             <h3><%= booking.hat.style %></h3>
             <p>Booking ID: <%= booking.id %></p>
             <p>Rental Start Date: <%= booking.start_date %></p>
