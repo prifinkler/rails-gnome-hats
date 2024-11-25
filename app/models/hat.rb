@@ -9,6 +9,10 @@ class Hat < ApplicationRecord
 
   before_destroy :destroy_related_bookings
 
+  def self.random_card_class
+    (([''] * 3) + ['wide', 'tall', 'big']).sample # this ensures the normal class '' appears n times more frequently than the other sizes
+  end
+
   private
 
   def destroy_related_bookings

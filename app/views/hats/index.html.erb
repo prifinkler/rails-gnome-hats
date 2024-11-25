@@ -7,19 +7,19 @@
 
 
 <div class="container py-5">
-  <div class="cards">
+  <div class="grid-container">
     <% @hats.each do |hat| %>
-      <%= link_to hat_path(hat), class: "text-decoration-none" do %>
-        <div class="card-product">
-          <%= cl_image_tag hat.photo.key, class: "img-fluid"%>
+      <div class="<%= Hat.random_card_class %>">
+        <%= link_to hat_path(hat), class: "text-decoration-none card-product" do %>
+          <%= cl_image_tag hat.photo.key%>
           <div class="card-product-info">
             <div>
               <p><%= hat.style %></p>
             </div>
             <p class="card-product-pricing"><%= "£#{hat.price}" %></p>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

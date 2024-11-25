@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-puts "Cleaning up database..."
+# puts "Cleaning up database..."
 # Booking.destroy_all
 # User.destroy_all
 # Hat.destroy_all
-puts "Database cleaned"
+# puts "Database cleaned"
 
 
 # User.create!(email: "gnome@gmail.com", password: ENV['PASSWORD'], first_name: "Pri", last_name: "Finkler")

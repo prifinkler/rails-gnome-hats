@@ -1,57 +1,79 @@
-.cards {
+.grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  grid-gap: 16px;
+  grid-gap: 0.5em;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
 }
-.card-product h1 {
-  margin: 0;
-  color: #03588C;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
+
+
+
 .card-product {
-  overflow: hidden;
-  background: white;
+  // overflow: hidden;
+  // background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   height: 100%;
 }
 
-.card-product > img {
+.card-product img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 3px;
 }
 
-.card-product h1 {
-  text-align: center;
-  padding: 32px;
+.card-product-info {
+  display: none;
 }
 
-.card-product p {
-  font-size: 15px;
-  opacity: .7;
-  margin: 0;
+.wide {
+  grid-column: span 2;
 }
 
-.card-product .card-product-info {
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-  color: #03588C;
+.tall {
+  grid-row: span 2;
 }
 
-.card-hat .card-hat-infos {
-  padding: 16px;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
+.big {
+  grid-row: span 2;
+  grid-column: span 2;
 }
+// .card
+
+// .card-product h1 {
+//   margin: 0;
+//   color: #03588C;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   font-size: 32px;
+//   font-weight: bold;
+//   text-align: center;
+//   padding: 32px;
+// }
+
+// .card-product p {
+//   font-size: 15px;
+//   opacity: .7;
+//   margin: 0;
+// }
+
+// .card-product .card-product-info {
+//   padding: 16px 24px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   position: relative;
+//   color: #03588C;
+// }
+
+// .card-hat .card-hat-infos {
+//   padding: 16px;
+//   align-items: center;
+//   display: flex;
+//   justify-content: space-between;
+//   position: relative;
+// }
 
 // Smallest device
 // @media (min-width: 100px) and (max-width: 575px) {
